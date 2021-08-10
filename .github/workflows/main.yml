@@ -1,0 +1,38 @@
+Simple Workflow::
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ] 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: echo Hello, world! && free -h
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          echo IM-GOD
+Multiple Instances:
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  test:
+   name: Subscrbeit
+   runs-on: ubuntu-latest
+   strategy:
+    fail-fast: false
+    matrix:
+     runner: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+   steps:
+     - run: |
+        echo IM-GOD
