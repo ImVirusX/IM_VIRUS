@@ -1,4 +1,3 @@
-Simple Workflow::
 name: CI
 on:
   push:
